@@ -27,13 +27,11 @@ SELECT LEN([Name]) AS LengthName FROM Department
 SELECT Id, [Name] FROM Department
 SELECT Id AS MyIdentities, [Name] AS Adlar FROM Department
 SELECT SUBSTRING([Name], 3, 2) AS Extracting FROM Department
-SELECT * FROM Department WHERE [Name] LIKE '%of%'
-SELECT CHARINDEX('@' , Email)-1 FROM Department
+SELECT CHARINDEX('@' , Email)+1 FROM Department
 SELECT CHARINDEX('L' , Email) FROM Department
 SELECT CONCAT([Name] , '--' , Email , '--' , Age , '--' , Point) AS FullUserName FROM Department
 SELECT REPLACE([Name], 'L' , 'p') AS CutEmail FROM Department
-SELECT SUBSTRING(Email, 1, CHARINDEX('@' , Email)+3) AS CutStringEmail FROM Department
-SELECT SUBSTRING(Email, CHARINDEX('@', Email), CHARINDEX('l', Email)) FROM Department
+SELECT SUBSTRING(Email, 1, CHARINDEX('@' , Email)) AS CutStringEmail FROM Department
 SELECT SUBSTRING(Email, CHARINDEX('@' , Email)+1, LEN(Email)) AS CutEmail FROM Department
 
 SELECT Age FROM Department
