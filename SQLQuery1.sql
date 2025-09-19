@@ -3,6 +3,10 @@
 CREATE DATABASE Company
 USE Company
 
+USE master
+ALTER DATABASE Company SET SINGLE_USER WITH ROLLBACK IMMEDIATE
+DROP DATABASE Company
+
 CREATE TABLE Department
 (
 Id INT,
@@ -38,7 +42,7 @@ SELECT Age FROM Department
 SELECT AVG(Age) FROM Department
 SELECT * FROM Department WHERE Age>(SELECT AVG(Age) FROM Department)
 
-
+SELECT DISTINCT [Name] FROM Department WHERE Point>5
 
 
 
